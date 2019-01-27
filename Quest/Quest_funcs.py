@@ -16,9 +16,9 @@ class Player:
         self.mag = magic
         self.lvl = level
         self.nm = name
-        self.equipped = [0,0,0,0,0,0,0]
+        self.equipped = [0, 0, 0, 0, 0, 0, 0]
 
-    def equip(self,num,item):
+    def equip(self, num, item):
         '''
         [0] = head
         [1] = body
@@ -29,9 +29,6 @@ class Player:
         [6] = left hand
         '''
         self.equipped[num] = item.name
-
-
-
 
     def lose_health(self, damage):
         self.hp = self.hp - damage
@@ -46,7 +43,8 @@ class Player:
         self.mag = self.mag + 1
         self.lvl = self.lvl + 1
 
-    #def attack():
+    # def attack():
+
 
 class Monster:
     def __init__(self, health, attack, defense, magic, level, name):
@@ -63,25 +61,27 @@ class Monster:
     def gain_health(self, health_gain):
         self.hp = self.hp + health_gain
 
+
 def initialize_monster_list(player):
 
     monster_list = []
 
-    orc = monster(15,3,3,0,random.randint(1,player.lvl),"Orc")
-    wolf = monster(20,3,5,0,random.randint(1,player.lvl),"Wolf")
-    rat = monster(10,2,2,0,random.randint(1,player.lvl),"Rat")
+    orc = Monster(15, 3, 3, 0, random.randint(1, player.lvl), "Orc")
+    wolf = Monster(20, 3, 5, 0, random.randint(1, player.lvl), "Wolf")
+    rat = Monster(10, 2, 2, 0, random.randint(1, player.lvl), "Rat")
 
     monster_list.append(orc)
     monster_list.append(wolf)
     monster_list.append(rat)
     return monster_list
 
-def fight(player,monster):
-    print("you are about to battle a %s"%str(monster.nm))
+
+def fight(player, monster):
+    print("you are about to battle a %s" % str(monster.nm))
     #battle
     while monster.hp > 0 and player.hp > 0:
         player_roll = random.randint(1, 40 - player.atk)
-        monster_roll = random.randint(1,50 - monster.atk)
+        monster_roll = random.randint(1, 50 - monster.atk)
 
         if player_roll % 4 != 0:
             print("You missed!")
@@ -102,12 +102,10 @@ def fight(player,monster):
         print("Battle is over!, You have lost!! :(")
 
 
-
-
 def initialize_weapons_list():
-    sword = Weapon(2,"Sword")
-    spear = Weapon(3,"Spear")
-    axe = Weapon(4,"Axe")
+    sword = Weapon(2, "Sword")
+    spear = Weapon(3, "Spear")
+    axe = Weapon(4, "Axe")
 
     weapons_list = []
     weapons_list.append(sword)
