@@ -69,10 +69,12 @@ def initialize_monster_list(player):
     orc = Monster(15, 3, 3, 0, random.randint(1, player.lvl), "Orc")
     wolf = Monster(20, 3, 5, 0, random.randint(1, player.lvl), "Wolf")
     rat = Monster(10, 2, 2, 0, random.randint(1, player.lvl), "Rat")
+    troll = Monster(30, 3, 4, 0, random.randint(1, player.lvl), "Troll")
 
     monster_list.append(orc)
     monster_list.append(wolf)
     monster_list.append(rat)
+    monster_list.append(troll)
     return monster_list
 
 
@@ -106,10 +108,12 @@ def initialize_weapons_list():
     sword = Weapon(2, "Sword")
     spear = Weapon(3, "Spear")
     axe = Weapon(4, "Axe")
+    bow = Weapon(3, "Bow")
 
     weapons_list = []
     weapons_list.append(sword)
     weapons_list.append(spear)
     weapons_list.append(axe)
+    weapons_list.append(bow)
 
     return weapons_list
